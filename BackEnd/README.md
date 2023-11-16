@@ -1,6 +1,7 @@
-Sure! Here is the code step by step, properly formatted and indented:
 
 ```python
+# app.py
+
 from flask import Flask, request, jsonify
 import requests
 import json
@@ -9,43 +10,32 @@ app = Flask(__name__)
 
 @app.route('/analyze', methods=['POST'])
 def analyze_text():
-    payload = request.get_json()
-    text = payload['text']
+    # Get the text from the request
+    text = request.json['text']
 
-    # Make a POST request to the Microsoft Azure Text Analytics API
-    azure_api_url = "<your-azure-api-url>"
-    azure_api_key = "<your-azure-api-key>"
-    azure_headers = {
-        'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key': azure_api_key
-    }
-    azure_data = {
-        'documents': [
-            {
-                'id': '1',
-                'text': text
-            }
-        ]
-    }
+    # Call the Microsoft Azure Text Analytics API
+    azure_api_url = 'https://<your-azure-api-url>'
+    azure_api_key = '<your-azure-api-key>'
+    azure_headers = {'Ocp-Apim-Subscription-Key': azure_api_key}
+    azure_data = {'documents': [{'id': '1', 'text': text}]}
     azure_response = requests.post(azure_api_url, headers=azure_headers, json=azure_data)
-    azure_results = azure_response.json()
+    azure_result = azure_response.json()
 
-    # Make a GET request to the Play Store API
-    play_store_api_url = "<play-store-api-url>"
-    play_store_response = requests.get(play_store_api_url)
-    play_store_results = play_store_response.json()
+    # Call the Play Store API
+    playstore_api_url = 'https://<play-store-api-url>'
+    playstore_response = requests.get(playstore_api_url)
+    playstore_result = playstore_response.json()
 
-    # Process the results from both APIs and create a response dictionary
+    # Process the results and return the response
     response = {
-        'text': text,
-        'azure_results': azure_results,
-        'play_store_results': play_store_results
+        'azure_result': azure_result,
+        'playstore_result': playstore_result
     }
-
     return jsonify(response)
 
 if __name__ == '__main__':
     app.run()
+
 ```
 
 To run the Flask application, make sure you have Flask installed. If not, you can install it using the command `pip install flask`. Save the code in a file named `app.py` and run it using the command `python app.py`. The application will start running on `http://localhost:5000`.
