@@ -50,4 +50,3 @@ You can test the application by sending a POST request to `http://localhost:5000
 
 The application will call the Microsoft Azure Text Analytics API and the Play Store API, process the results, and return a JSON response containing the results from both APIs.
 
-That's it! You have successfully created a Flask application that interacts with APIs. Feel free to modify the code to suit your specific requirements. Happy coding!
