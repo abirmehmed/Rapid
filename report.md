@@ -1,7 +1,7 @@
 ## Report on Backend Development of Playstore Sentiment Analysis Project
 
 ### Introduction
-The backend development of the Playstore sentiment analysis project using Flask has been successfully completed. The project aims to analyze the sentiment of user reviews on the Playstore using natural language processing techniques.
+The backend development of the Rapid Analyzer project using Flask has been successfully completed. The project aims to analyze the sentiment of user reviews on the Playstore using natural language processing techniques.
 
 ### Backend Development Overview
 The backend development involved creating a REST API using Flask in Python to perform sentiment analysis. The NLTK library was utilized to classify the text into positive and negative sentiment. The API supports both GET and POST HTTP functions for analyzing the sentiment of user reviews.
