@@ -89,7 +89,7 @@ nltk.download('stopwords')
 nltk.download('vader_lexicon')
 
 # Scrape Play Store app reviews
-url = 'https://play.google.com/store/apps/details?id=com.tencent.ig'
+url = 'https://play.google.com/store/search?q=pubg&c=apps'
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 reviews = soup.find_all('div', {'class': 'review-body'})
@@ -99,6 +99,12 @@ tokenized_reviews = [word_tokenize(review.text) for review in reviews]
 
 stop_words = set(stopwords.words('english'))
 filtered_reviews = [[word for word in review if word.lower() not in stop_words] for review in tokenized_reviews]
+
+# Check if there are any reviews after filtering
+# Check if there are any reviews after filtering
+if len(filtered_reviews) == 0 or all(len(review) == 0 for review in filtered_reviews):
+    print("No reviews found.")
+    exit()
 
 sia = SentimentIntensityAnalyzer()
 sentiment_scores = [sia.polarity_scores(' '.join(review)) for review in filtered_reviews]
@@ -117,6 +123,7 @@ print("Positive reviews:", len(positive_reviews))
 print("Negative reviews:", len(negative_reviews))
 print("Neutral reviews:", len(neutral_reviews))
 print("Overall sentiment score:", overall_sentiment_score)
+
 ```
 
 Make sure to replace `'https://play.google.com/store/apps/details?id=com.example.app'` with the URL of the Play Store app you want to scrape reviews from.
