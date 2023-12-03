@@ -89,7 +89,7 @@ nltk.download('stopwords')
 nltk.download('vader_lexicon')
 
 # Scrape Play Store app reviews
-url = 'https://play.google.com/store/apps/details?id=com.example.app'
+url = 'https://play.google.com/store/apps/details?id=com.tencent.ig'
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 reviews = soup.find_all('div', {'class': 'review-body'})
@@ -120,6 +120,7 @@ print("Overall sentiment score:", overall_sentiment_score)
 ```
 
 Make sure to replace `'https://play.google.com/store/apps/details?id=com.example.app'` with the URL of the Play Store app you want to scrape reviews from.
+https://play.google.com/store/apps/details?id=com.tencent.ig
 
 This code imports the necessary libraries, sends an HTTP GET request to the Play Store app page, parses the HTML response using BeautifulSoup, extracts the reviews, tokenizes the text, removes stopwords, performs sentiment analysis using the VADER sentiment analyzer from NLTK, and calculates the overall sentiment score. Finally, it prints the results, including the total number of reviews, the number of positive, negative, and neutral reviews, and the overall sentiment score.
 
