@@ -1,4 +1,4 @@
-#### Using the Microsoft Azure Text Analytics API for Sentiment Analysis
+# Using the Microsoft Azure Text Analytics API for Sentiment Analysis #
 
 Sentiment analysis is the process of determining the sentiment or emotional tone of a piece of text. The Microsoft Azure Text Analytics API provides a powerful and easy-to-use solution for performing sentiment analysis on text data. In this guide, I will walk you through the process of using the Text Analytics API for sentiment analysis in Python.
 
