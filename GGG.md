@@ -27,9 +27,3 @@ Here are some resources to help you get started:
 
 I hope this friendly guide helps you get started with your sentiment analysis application! If you have any more questions, feel free to ask. Good luck!
 
-Citations:
-[1] https://www.kaggle.com/code/tarunchilkur/sentiment-analysis-of-google-play-store-data
-[2] https://thecleverprogrammer.com/2021/05/31/google-play-store-sentiment-analysis-using-python/
-[3] https://getthematic.com/sentiment-analysis/
-[4] https://monkeylearn.com/blog/sentiment-analysis-tools/
-[5] https://play.google.com/store/apps/details?gl=US&hl=en_US&id=com.drunkdeveloper.sentiment.analysis
